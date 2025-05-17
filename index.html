@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Stopwatch - Focus Tracker</title>
+    <meta name="description" content="Stay focused while studying with this camera-powered stopwatch. It pauses when you're distracted!">
+    <meta name="keywords" content="study, stopwatch, focus, tracker, productivity, camera, face detection, Google AdSense">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="canonical" href="https://yourdomain.com/study-stopwatch">
+</head>
+<body class="light"> <!-- Default theme: light -->
+    <div class="container">
+        <div class="camera-background">
+            <video id="video" width="720" height="560" autoplay muted></video>
+            <canvas id="canvas" style="position: absolute; top: 0; left: 0;"></canvas>
+            <div id="focus-indicator"></div>  <!-- Visual focus indicator -->
+        </div>
+
+        <div class="settings">
+          <h2>Settings</h2>
+            <div class = 'input-label'>
+              <label for="sensitivity">Sensitivity:</label>
+              <input type="range" id="sensitivity" min="1" max="100" value="50">
+            </div>
+            <div class = 'input-label'>
+              <label for="theme">Theme:</label>
+              <select id="theme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="blue">Blue</option>
+              </select>
+            </div>
+          <button id="calibrate">Calibrate</button> <!-- Calibration Button -->
+        </div>
+
+        <div class="stopwatch-controls">
+            <div id="display">00:00:00</div>
+            <button id="startStop">Start</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div class="ad-space" id="ad-top">
+            <div id="ad-unit-top"></div>
+        </div>
+
+        <div class="ad-space" id="ad-bottom">
+            <div id="ad-unit-bottom"></div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+          // Google AdSense Setup (Replace with your actual Ad Unit IDs)
+          var topAdSlot = document.getElementById('ad-unit-top');
+          var bottomAdSlot = document.getElementById('ad-unit-bottom');
+
+          if (topAdSlot) {
+            topAdSlot.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="YOUR_TOP_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+          }
+
+          if (bottomAdSlot) {
+            bottomAdSlot.innerHTML = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="YOUR_BOTTOM_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+          }
+
+          (adsbygoogle = window.adsbygoogle || []).push({});  // Refresh Ads
+        };
+    </script>
+</body>
+</html>
